@@ -1,30 +1,34 @@
-# WeatherGPT — India Weather Intelligence (Deploy-Ready)
+# WeatherGPT — India Weather Intelligence
 
-Production-ready full-stack weather intelligence app (**React + Vite** frontend, **Node.js + Express** backend) with zero boilerplate or unused dependencies.
+**Live Demo:** [https://weather-gpt-omega-three.vercel.app](https://weather-gpt-omega-three.vercel.app/)  
+**Repository:** [https://github.com/Shahzad-Wazir/WeatherGPT](https://github.com/Shahzad-Wazir/WeatherGPT)
 
-## Deploy Guide (Render + Vercel)
+Full-stack weather intelligence web app built with **React + Vite** (frontend) and **Node.js + Express** (backend).
 
-### 1. Push to GitHub
-Upload this folder (`backend/`, `frontend/`, `render.yaml`, `.gitignore`) to a GitHub repository.
+## Features
 
-### 2. Deploy Backend on Render
-1. Go to **Render → New → Web Service** and connect your GitHub repo.
-2. Set **Root Directory** to `backend`.
-3. **Build Command:** `npm install`
-4. **Start Command:** `npm start`
-5. Add Environment Variables (optional):
-   - `GEMINI_API_KEY` — Your Google AI Studio key (for Gemini AI responses)
-   - `WEATHER_API_KEY` — Optional OpenWeatherMap key (works out-of-the-box with free Open-Meteo if omitted)
-   - `CORS_ORIGIN` — Your deployed Vercel URL (or leave empty to allow all origins)
-6. Deploy and copy your live Render backend URL (e.g. `https://weathergpt-backend.onrender.com`).
+- **Live Weather Dashboard:** Real-time weather, dynamic icons, GPS location, Save Place bookmarking, and a 24-hour forecast strip.
+- **India GIS Weather Map:** Interactive Leaflet dark map across major Indian cities with click-anywhere coordinate lookup.
+- **Extended 5-Day Forecast:** Daily highs/lows, rain probability, and interactive 3-hour breakdowns.
+- **IMD Alert Center:** Live hazard scanning, severity filters, Emergency Mode banner, and India disaster helplines.
+- **WeatherGPT AI Assistant:** Live-weather-aware AI chat (supports Gemini API + built-in weather engine).
+- **Climate Analytics:** 36-hour temperature curves, humidity/rain probability charts, comfort index, and city-vs-city comparison.
+- **Saved Places & Settings:** Pinned cities, °C/°F toggle, wind units, auto-refresh, and backend diagnostics.
 
-### 3. Deploy Frontend on Vercel
-1. Go to **Vercel → Add New Project** and import the same GitHub repo.
-2. Set **Root Directory** to `frontend`.
-3. Framework Preset: **Vite** (`npm run build`, output `dist`).
-4. Add Environment Variable:
-   - `VITE_API_URL` = your Render backend URL (no trailing slash, e.g. `https://weathergpt-backend.onrender.com`)
-5. Click **Deploy**. `frontend/vercel.json` is already configured so page refreshes on all routes work cleanly.
+## Deployment (Render + Vercel)
+
+### Backend (Render)
+1. Go to **Render → New → Web Service** and connect `Shahzad-Wazir/WeatherGPT`.
+2. Set **Root Directory** to `backend`, **Build Command** to `npm install`, and **Start Command** to `npm start`.
+3. Add Environment Variables:
+   - `CORS_ORIGIN` = `https://weather-gpt-omega-three.vercel.app`
+   - `GEMINI_API_KEY` = your Google AI Studio key (optional)
+   - `WEATHER_API_KEY` = your OpenWeatherMap key (optional; defaults to free Open-Meteo)
+
+### Frontend (Vercel)
+1. Import `Shahzad-Wazir/WeatherGPT` in **Vercel** with **Root Directory** set to `frontend` (Vite preset).
+2. Set Environment Variable `VITE_API_URL` to your deployed Render backend URL (no trailing slash).
+3. Live URL: [https://weather-gpt-omega-three.vercel.app](https://weather-gpt-omega-three.vercel.app/)
 
 ## Local Development
 
